@@ -4,7 +4,7 @@
 ##
 ##    Indicator for Yubikey Google Authenticator
 ##
-##    by damnshiok
+##    by damnshiok@gmail.com
 ##    with adapted code from Casey Link
 ##
 ##    Like this? Consider buying me a beer!
