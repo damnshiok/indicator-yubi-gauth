@@ -16,7 +16,8 @@ Prerequisites
 -------------
 * Ubuntu >= 12.04 
 * Yubikey >= 2.x
-* Some packages from Yubico, which you can install on Ubuntu by running these in the command line:
+* Might need yubi_goog.py from https://github.com/Ramblurr/yubi-goog
+* Need some packages from Yubico, which you can install on Ubuntu by running these in the command line:
 
 `sudo add-apt-repository ppa:yubico/stable`
 
@@ -24,18 +25,18 @@ Prerequisites
 
 `sudo apt-get install yubikey-personalization-gui yubikey-personalization`
 
-Note: You have to make the python scripts executable by `chmod +x script.py`
+Note: You have to make the python scripts executable by running `chmod +x script.py`
 
 Setup for use on Gmail, Mt. Gox or CampBX
 -----------------------------------------
-First you need to get your secret key.
+To set up 2-factor authentication at the following websites, you will need to generate a secret key.
 * For Gmail, go to https://www.google.com/settings/security and click on "Settings" under "2-step verification", and then on "Android" under "Mobile application". Then click on "Can't scan the barcode?" to get your base32-encoded secret key. Go to step 1.
-* For CampBX, go to "MY PROFILE", "EDIT PROFILE", re-enter your passwords, check "2-Factor with Google Authenticator", click "SAVE MY PROFILE". You should see the secret key. Go to step 1.
-* For Mt. Gox, go to "Security Settings", click on "ADD NEW" under "Software Authenticators". You will see both a "Standard Private Key" and a "Secure Private Key". The "Standard Private Key" is the right secret to use as it is already in hex. You can skip step 1 and go straight to step 2.
+* For CampBX, go to "MY PROFILE", "EDIT PROFILE", re-enter your passwords, check "2-Factor with Google Authenticator", click "SAVE MY PROFILE". You should see the base32-encoded secret key. Go to step 1.
+* For Mt. Gox, go to "Security Settings", click on "ADD NEW" under "Software Authenticators". You will see both a "Standard Private Key" and a "Secure Private Key". Use "Standard Private Key" as it is already in hex. You can skip step 1 and go straight to step 2.
 
-1. Run `yubi_goog.py --convert-secret` from https://github.com/Ramblurr/yubi-goog. It will prompt you for your base32-encoded secret and output a result in hex.
+1. We need to convert the secret key from base32 to hex. Run `./yubi_goog.py --convert-secret` from https://github.com/Ramblurr/yubi-goog. It will prompt you for your secret key in base32 and output a result in hex.
 2. Run `yubikey-personalization-gui` to program your hex secret into your Yubikey as a HMAC-SHA1 challenge-response key. Take care to choose slot 2 so as not to overwrite slot 1 which normally contains your Yubicloud OTP configuration. Also, decide whether you want to have to "require user input". Enabling it is more secure. You can refer to this [Youtube video for a walkthrough][walkthrough]. 
-3. Run `indicator-yubi-gauth.py`. Click on "Get OTP". If you enabled "require user input", touch your Yubikey. Your OTP will be pasted into the clipboard. Paste it into your webpage to complete the setup. The OTP will be clear from the clipboard after 10 seconds for security purposes.
+3. Run `./indicator-yubi-gauth.py`. Click on "Get OTP". If you enabled "require user input", touch your Yubikey. Your OTP will be pasted into the clipboard. Paste it into your webpage to complete the setup. The OTP will be cleared from the clipboard after 10 seconds for security purposes.
 
 Features to be added
 --------------------
