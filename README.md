@@ -28,10 +28,10 @@ Note: You have to make the python scripts executable by `chmod +x script.py`
 
 Setup for use on Gmail, Mt. Gox or CampBX
 -----------------------------------------
-1. First you need to get your secret key.
- For Gmail, go to https://www.google.com/settings/security and click on "Settings" under "2-step verification", and then on "Android" under "Mobile application". Then click on "Can't scan the barcode?" to get your base32-encoded secret key. Go to step 2.
- For CampBX, go to "MY PROFILE", "EDIT PROFILE", re-enter your passwords, check "2-Factor with Google Authenticator", click "SAVE MY PROFILE". You should see the secret key. Go to step 2.
- For Mt. Gox, go to "Security Settings", click on "ADD NEW" under "Software Authenticators". You will see both a "Standard Private Key" and a "Secure Private Key". The "Standard Private Key" is the right secret to use as it is already in hex. You can skip step 2 and go straight to step 3.
+First you need to get your secret key.
+* For Gmail, go to https://www.google.com/settings/security and click on "Settings" under "2-step verification", and then on "Android" under "Mobile application". Then click on "Can't scan the barcode?" to get your base32-encoded secret key. Go to step 2.
+* For CampBX, go to "MY PROFILE", "EDIT PROFILE", re-enter your passwords, check "2-Factor with Google Authenticator", click "SAVE MY PROFILE". You should see the secret key. Go to step 2.
+* For Mt. Gox, go to "Security Settings", click on "ADD NEW" under "Software Authenticators". You will see both a "Standard Private Key" and a "Secure Private Key". The "Standard Private Key" is the right secret to use as it is already in hex. You can skip step 2 and go straight to step 3.
 
 2. Run `yubi_goog.py --convert-secret` from https://github.com/Ramblurr/yubi-goog. It will prompt you for your base32-encoded secret and output a result in hex.
 3. Run `yubikey-personalization-gui` to program your hex secret into your Yubikey as a HMAC-SHA1 challenge-response key. Take care to choose slot 2 so as not to overwrite slot 1 which normally contains your Yubicloud OTP configuration. Also, decide whether you want to have to "require user input". Enabling it is more secure. You can refer to this [Youtube video for a walkthrough][walkthrough]. 
