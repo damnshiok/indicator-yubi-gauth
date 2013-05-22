@@ -19,7 +19,7 @@ Prerequisites
 * Might need yubi_goog.py from https://github.com/Ramblurr/yubi-goog
 * Need some packages from Yubico, which you can install on Ubuntu by running these in the command line:
 
-$ sudo add-apt-repository ppa:yubico/stable
+`sudo add-apt-repository ppa:yubico/stable`
 
 `sudo apt-get update`
 
