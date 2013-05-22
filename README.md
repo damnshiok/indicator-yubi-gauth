@@ -36,7 +36,7 @@ To set up 2-factor authentication at the following websites, you will need to ge
 
 1. We need to convert the secret key from base32 to hex. Run `./yubi_goog.py --convert-secret` from https://github.com/Ramblurr/yubi-goog. It will prompt you for your secret key in base32 and output a result in hex.
 2. Run `yubikey-personalization-gui` to program your hex secret into your Yubikey as a HMAC-SHA1 challenge-response key. Take care to choose slot 2 so as not to overwrite slot 1 which normally contains your Yubicloud OTP configuration. Also, decide whether you want to have to "require user input". Enabling it is more secure. You can refer to this [Youtube video for a walkthrough][walkthrough]. 
-3. Run `./indicator-yubi-gauth.py`. Click on "Get OTP". If you enabled "require user input", touch your Yubikey. Your OTP will be pasted into the clipboard. Paste it into your webpage to complete the setup. The OTP will be cleared from the clipboard after 10 seconds for security purposes.
+3. Run `./indicator-yubi-gauth.py`. Click on indicator icon and select "Get OTP". If you enabled "require user input", touch your Yubikey. Your OTP will be pasted into the clipboard. Paste it into your webpage to complete the setup. The OTP will be cleared from the clipboard after 10 seconds for security purposes.
 
 Features to be added
 --------------------
