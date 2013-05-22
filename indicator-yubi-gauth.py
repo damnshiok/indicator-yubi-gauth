@@ -9,7 +9,7 @@
 ##
 ##    Like this? Consider buying me a beer!
 ##
-##    1PCLGBVRmySEDHsinovvoQpy4RWifXZFsC
+##    18mcyx2A78fUHjQwnrqca4H9N9XP6EqL5s
 ##
 ##################################################
 
