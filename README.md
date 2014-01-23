@@ -9,9 +9,6 @@ This can be set up to use your Yubikey at any website that advertises 2 factor a
 If you find this useful, you are welcome to buy me a beer.
 My bitcoin address is 18mcyx2A78fUHjQwnrqca4H9N9XP6EqL5s
 
-Contains code from yubi-goog https://github.com/Ramblurr/yubi-goog
-Released under MIT License.
-
 Prerequisites
 -------------
 * Ubuntu >= 12.04 
