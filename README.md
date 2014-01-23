@@ -20,7 +20,7 @@ Prerequisites
 
 `sudo apt-get update`
 
-`sudo apt-get install yubikey-personalization-gui yubikey-personalization`
+`sudo apt-get install python-yubico yubikey-personalization-gui yubikey-personalization`
 
 Note: You have to make the python scripts executable by running `chmod +x script.py`
 
